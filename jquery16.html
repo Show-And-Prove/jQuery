@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- jQuery CDN -->
+    <script src="https://code.jquery.com/jquery-3.6.1.js"
+        integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI="
+        crossorigin="anonymous"></script>   
+    <style>
+     
+    </style>
+</head>
+<body>
+    <section class="container">
+        <article id="joinFrm">
+            <div>
+                <label for="userId" class="item">아이디 * </label>
+                <input id="userId" type="text">
+            </div>
+            <div>
+                <label for="userName" class="item">이름 *    </label>
+                <input id="userName" type="text">
+            </div>
+            <div>
+                <label for="pwd" class="item">비밀번호 * </label>
+                <input id="pwd" type="password">
+            </div>
+            <div>
+                <label for="pwdConfirm" class="item">비밀번호 확인 * </label>
+                <input id="pwdConfirm" type="password">
+            </div>
+            <input type="button" id="regBtn" value="회원가입">
+        </article>
+        <div id="msg"></div>
+    </section>
+    <script>
+    $(document).ready(function(){
+        var pass = "no";    //기본값
+        var source;     //초기화
+        $(":button").click(function(){
+            $(":text, :password").each(function(){
+                if($(this).val()==""){
+                    alert("입력 데이터가 비어 있습니다.");
+                    return false;
+                } else {
+                    pass = "yes";
+                }
+            });
+        });
+        if(pass == "yes"){
+            source = {
+            "id":$("#userId").val(),
+            "pw":$("#pwd").val(),
+            "name":$("#userName").val()};
+            $.ajax({
+                url:"ajaxJoin.do?member="+source,
+                type:"get",
+                dataType:"json"
+                success:function(res){
+                    $("#msg").text(res);
+                },
+                error:function(res, status, err){
+                    alert(res+"가 " + err + "로 인해서 정상적으로 처리되지 못했습니다.");
+                }
+            });
+        }
+    });
+    </script>
+</body>
+</html>

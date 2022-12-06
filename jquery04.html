@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- jQuery CDN -->
+    <script src="https://code.jquery.com/jquery-3.6.1.js"
+        integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI="
+        crossorigin="anonymous"></script>
+</head>
+<body>
+    <section class="container">
+        <body>
+        <h1>후손과 자식요소 선택</h1>    
+        <div>
+            <em>1</em>  <em>2</em>  <p><em>3</em></p>   <em>4</em>
+        </div><br><hr><br>
+        <span>
+            <em>Good Bye!</em>  <em>javascript</em>     <p><em>plugin</em></p>
+        </span>
+        </body>
+    </section>
+    <script>
+    $(function(){
+        $("div > em").css("color", "red");
+        $("div em").css("background-color", "yellow");
+        //span 자식 em요소에 글자색 남색
+        //span 후손 em요소에 배경색 핑크
+        $("span > em").css("color", "navy");
+        $("span em").css("background-color", "pink" );
+    });    
+    </script>
+</body>
+</html>

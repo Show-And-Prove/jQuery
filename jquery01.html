@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery의 시작</title>
+    <!-- jQuery CDN -->
+    <script src="https://code.jquery.com/jquery-3.6.1.js"
+        integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI="
+        crossorigin="anonymous">
+    </script>
+    <script>
+    
+    </script>
+</head>
+<body>
+    <h1>jQuery의 연결</h1>
+    <p>해당 프로젝트에 다운로드받아 연결 또는 CDN 방식으로 연결한다.</p>
+    <p>항상 최신판을 유지할 경우 버전부분에 latest</p>
+    <p>latest 버전 사용시 문법이 바뀔 수 있어 유지보수가 힘들 수 있음</p>
+    <br><hr><br>
+    <div class="container">
+    </div>
+    <div id="con"></div>
+    <br><hr><br>
+    <div id="con2"></div>
+
+
+    <script>
+    function abc() {
+        alert("표시할내용");
+    }
+
+    $(function(){
+        $("#con").text("표시할내용");
+    })
+
+    $(function(){
+        $("#con2").text("1234567890");
+    })
+
+    </script>
+</body>
+</html>

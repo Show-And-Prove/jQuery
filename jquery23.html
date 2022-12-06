@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- jQuery CDN -->
+    <script src="https://code.jquery.com/jquery-3.6.1.js"
+        integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI="
+        crossorigin="anonymous"></script>
+</head>
+<body>
+    <section class="container">
+        <h1>기본 메소드 - val()</h1>
+        <article class="data">
+            <button id="submit">값 전송</button>
+            <button id="reset">초기화</button>
+            <input type="text" size="30" title="id입력" placeholder="id" id="m_id">
+            <div id="console"></div>
+        </article>
+    </section><br><hr><br>
+    <script>
+    $(document).ready(function(){
+        //아이디가 reset 인 버튼을 클릭하면, 아이디가 m_id인 요소의 입력값을 비우고,
+        $("#reset").click(function(){
+            $("#m_id").val('');
+        });
+
+        //아이디가 submit 인 버튼을 클릭하면, 값이 비어 있는지 검증을 하고 , 값이 있는 경우
+        //그 값을 아이디가 console 인 곳에 텍스트로 출력
+        //임의의 변수를 생성하여 그 값으로 비교
+        $("#m_id").val() = data;
+        $("#submit").click(function(){
+            if(data == "" ){
+                alert('값을 입력하세요');
+            }else{
+                //임의의 함수를 생성하여 보낸 후 자바스크립트로 출력
+                report(data);
+                //$("#console").text(data);
+            }
+        });
+        //생성한 함수를 받아 자바스크립트로 출력하는 부분
+        function report(msg){
+            $("#console").text(msg);
+        }
+    });
+    </script>
+</body>
+</html>

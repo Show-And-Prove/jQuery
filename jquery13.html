@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- jQuery CDN -->
+    <script src="https://code.jquery.com/jquery-3.6.1.js"
+        integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI="
+        crossorigin="anonymous"></script>   
+</head>
+<body>
+    <section class="container">
+        <h1>체크박스(:checkbox), 체크된 상태(:checked), 체크되지 않은 상태(not(:checked))</h1>
+        <div>
+            <input type="checkbox" name="fruit" /> <span>사과</span>
+        </div>
+        <div>
+            <input type="checkbox" name="fruit" /> <span>바나나</span>
+        </div>
+        <div>
+            <input type="checkbox" name="fruit" checked="checked"/> <span>오렌지</span>
+        </div>
+    </section><br><hr><br>
+    <script>
+    $(document).ready(function(){
+        //체크박스의 다음 요소 span에 배경색을 빨강으로 설정
+        //체크박스가 체크되면 그 다음 요소 span의 글자색을 노랑으로 변경
+        //체크박스가 체크 해제되면, 그 다음 요소 span의 글자색을 남색으로 변경
+        $("input:checkbox + span ").css("background-color", "red");
+        $("input:checkbox:checked + span ").css("color", "yellow");
+        $("input[type=checkbox]:not(:checked) + span").css("color","navy");
+
+        $("input:checkbox").click(function(){
+            $("input:checkbox:checked + span ").css("color", "yellow");
+            $("input[type=checkbox]:not(:checked) + span").css("color","navy");
+        });
+        //이벤트트리거 : 이벤트를 자동으로 강제 발생
+    });
+
+    </script>
+</body>
+</html>

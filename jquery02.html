@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery 선택자</title>
+    <script src="https://code.jquery.com/jquery-3.6.1.js"
+        integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI="
+        crossorigin="anonymous">
+    </script>
+    <style>
+    .highlight { font-weight: 900; }
+    </style>
+</head>
+<body>
+    <div id="con">
+        <ul class="lst">
+            <li><a href="https://">a태그 + href에 https링크</a></li>
+            <li><a href=".html">a태그 href에 .html로 끝나는 링크</a></li>
+            <li><a>href속성 없는 a태그</a></li>
+        </ul>
+    </div>
+    <br>
+    <button type="button" id="btn1">버튼</button>
+
+    <script>
+    $(function(){
+        $("*").css("margin", "0px");    //전체 선택자
+        $("a").css("text-decoration", "none").css("color", "deepskyblue").addClass("highlight");    //태그 선택자
+        $("#con").css({("margin-top":"10px", "padding":"20px")});   //아이디 선택자
+        $(".lst").css("list-style", "none");    //클래스 선택자
+        $("a[href]").css("background-color", "green");  //속성 존재유무 선택자
+        $("a[href*='https'").css("padding", "15px");    //속성 포함하는 선택자
+        $("a[href$='.html'").css("background", "orange");   //속성 접미사 선택자
+        $("#btn1").click(function(){
+            var cnt = $(".lst li").length + 1;  //후손 선택자
+            $(".lst").append("<li><a href=''>텍스트"+cnt+"</a></li>")
+        });
+    });
+
+
+    </script>
+</body>
+</html>
