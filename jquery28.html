@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- jQuery CDN -->
+    <script src="https://code.jquery.com/jquery-3.6.1.js"
+        integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI="
+        crossorigin="anonymous"></script>
+    <style>
+    div { width: 50px; height: 50px; border: 1px solid black; color: #fff; background-color: #fff;}
+    </style>
+    <script>
+    $(document).ready(function(){
+        $("button").click(function(){
+            $(this).next("div").css("background", "yellow");
+            $(this).prev("div").css("background", "red");
+            $("div").next().addClass("after");
+            $("div").nextAll(".middle").addClass("sel");
+            $("div").prev("span").css("color", "orange");
+            $("div").prevAll().css("padding","25px");
+        });
+    });
+    </script>
+</head>
+<body>
+    <section class="container">
+        <h1>선택자 다음/이전 요소 선택 메소드 - next(), prev()</h1>
+        <article class="data">
+            <button> 바로 아래 형제 엘리먼트에 스타일 입히기 1</button>
+            <div id="first">first</div>
+            <span id="second" class="middle">
+                sibling1        <div id="child">child</div>
+            </span>
+            <div id="third" class="middle">sibling2</div>
+            <span id="fourth" class="middle">sibling3</span>
+            <span id="fifth" class="middle">sibling4</span>
+            <div id="sixth">last</div>
+            <button> 바로 위 형제 엘리먼트에 스타일 입히기1</button>
+        </article>
+    </section><br><hr><br>
+</body>
+</html>

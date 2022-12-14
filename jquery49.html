@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-1.8.0.js" integrity="sha256-00Fh8tkPAe+EmVaHFpD+HovxWk7b97qwqVi7nLvjdgs=" crossorigin="anonymous"></script>
+    <style>
+    img { display: block; width: 200px; height: auto; }
+    </style>
+    <script>
+    $(document).ready(function(){
+        $("img").mousedown(function(){
+            $(this).css("border-color","blue");
+        });
+        $("img").mouseup(function(){
+            $(this).css("border-color","gold");
+        });
+        $("img").mouseout(function(){
+            $(this).css("border-color","black");
+        });
+        $("img").mouseover(function(){
+            $(this).css("border-color","red");
+        });
+        $("img").click(function(){
+            $(this).width($(this).width()*1.5);
+        });
+        $("img").dblclick(function(){
+            $(this).width($(this).width()/1.5);
+        })
+    });
+    </script>
+</head>
+<body>
+    <section class="container">
+        <h2></h2>
+        <p></p>
+        <article class="data">
+            <img src="1.jfif" id="pic1">
+        </article>
+    </section><br><hr><br>        
+    </section>
+</body>
+</html>

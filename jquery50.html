@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-1.8.0.js" integrity="sha256-00Fh8tkPAe+EmVaHFpD+HovxWk7b97qwqVi7nLvjdgs=" crossorigin="anonymous"></script>
+    <script>
+    $(document).ready(function(){
+        $("img").mousemove(function(event){
+            $("p:first").html(event.clientX + ", " + event.clientY);
+            $("p.middle").html(event.screenX + ", " + event.screenY);
+            $("p:last").html(event.pageX + ", " + event.pageY);
+        });
+    });
+    </script>
+</head>
+<body>
+    <section class="container">
+        <h1>마우스 개별 이벤트 메소드</h1>
+        <article class="data">
+            <div><img src="1.jfif" id="pic1"></div>
+            <p></p> <p class="middle"></p>  <p></p>
+        </article>
+    </section>    
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- jQuery CDN -->
+    <script src="https://code.jquery.com/jquery-3.6.1.js"
+        integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI="
+        crossorigin="anonymous"></script>
+    <style>
+    .data:after { content:""; display: block; clear: both; }
+    </style>
+    <script>
+    $(document).ready(function(){
+        $("button").click(function(){
+            $("strong").appendTo($("span"));
+            $("em").clone().appendTo($("span"));
+        });
+    });
+    </script>
+</head>
+<body>
+    <section class="container">
+        <h1>엘리먼트 복제 메소드 - clone()</h1>
+        <article class="data">
+            <button>복제</button>
+            <strong>rla</strong>
+            <em>rlxo</em>
+            <span>tptkddptj wpdlf whgdkgksms tkfka :</span>
+            <span> tptkddptj wpdlf aldnjgkf tn djqtsms tkfka : </span>
+        </article>
+    </section><br><hr><br>
+</body>
+</html>
