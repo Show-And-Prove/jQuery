@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-latest.js"></script>
+    <script>
+    $(document).ready(function(){
+        $("input").focus(function(){
+            $("this").val("").css("color","blue");
+        });
+        $("input").blur(function(){
+            if($(this).val()==""){
+                $("this").val("아이디가 입력되지않았습니다!").css("color","red");
+            }
+        });
+        $("#sel").change(function(){
+            var hrefurl = $(this).val();
+            if($(this).val != "") {
+                window.open(hrefurl, "new window");
+            }
+        });
+    });
+    </script> 
+</head>
+<body>
+    <section class="container">
+        <h1>폼 관련 이벤트 메소드 - focus(), blur()</h1>
+        <article class="data">
+            <input type="text" id="id">
+        </article>
+        <article class="data">
+            <select id="sel">
+                <option value="">선택안함</option>
+                <option value="https://www.naver.com">네이버</option>
+                <option value="https://www.daum.net">다음</option>
+                <option value="https://www.google.com">구글</option>
+            </select>
+        </article>
+    </section>
+</body>
+</html>

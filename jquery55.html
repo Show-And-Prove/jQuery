@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-latest.js"></script>
+    <style>
+    #imgTarget { transition-duration: 0.6s; width: 200px; }
+    #msgBox { opacity: 0; }
+    </style>
+    <script>
+    $(document).ready(function(){
+        $("#msgBox").keypress(function (event){
+            var ht = $("#imgTarget").height();
+            var wd = $("#imgTarget").width();
+            $("#result").text("눌려진 키는 "+ String.fromCharCode(event.which) + "이며 , 키 값은 " + event.which + "입니다.");
+            if(event.which == 43 ) {
+                $("#imgTarget").width($("#imgTarget").width()*2);
+            } else if (event.which == 45) { 
+                $("#imgTarget").width($("#imgTarget").width()/2);
+            }
+        });
+    });
+    </script>
+</head>
+<body>
+    <section class="comment">
+        <h1>키보드 관련 이벤트 메소드 - keyup(), ...</h1>
+        <article class="data">
+            <div>
+                <h2>눌려진 키는 ?</h2>
+                <input id="msgBox" autofocus />
+            </div>
+            <h3 class="result"></h3>
+            <img src="1.jfif" alt="더미이미지" id="imgTarget">
+        </article>
+    </section>
+</body>
+</html>

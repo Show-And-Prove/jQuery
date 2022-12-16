@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-latest.js"></script>
+    <script>
+    $(document).ready(function(){
+        var wd0 = screen.width;
+        $(window).resize(function(){
+            var wd = $(window).width();
+            if(wd>=960 || wd==wd0){
+                $(".title").css("color","blue").css("font-size","48px");
+                $(".comment").css("color","blue").css("font-size","20px");
+                $("img").attr("src","1.jfif").width(500);
+            } else if (wd>=768) {
+                $(".title").css("color","red").css("font-size","36px");
+                $(".comment").css("color","red").css("font-size","18px");
+                $("img").attr("src","1.jfif").width(400);
+            } else {
+                $(".title").css("color","green").css("font-size","48px");
+                $(".comment").css("color","green").css("font-size","10px");
+                $("img").attr("src","1.jfif").width(300);
+            }
+        });.resize();
+    });
+    </script>
+</head>
+<body>
+    <section class="container">
+        <h2></h2>
+    </section>
+</body>
+</html>
